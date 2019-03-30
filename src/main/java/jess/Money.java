@@ -8,8 +8,8 @@ public class Money {
 
     protected int amount;
 
-    Money times( int amount ){
-        return null;
+    Money times( int multiplier ){
+        return new Money(amount * multiplier, currency);
     };
 
     public String toString() {
@@ -19,11 +19,11 @@ public class Money {
     // factory means we are generating subclasses here
     // but not implementing them
     static Money dollar(int amount) {
-        return new Dollar(amount, "USD");
+        return new Money(amount, "USD");
     }
 
     static Money franc(int amount) {
-        return new Franc(amount, "CHF");
+        return new Money(amount, "CHF");
     }
 
     public boolean equals(Object object){
